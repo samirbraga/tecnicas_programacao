@@ -1,21 +1,23 @@
-public class Teste{
-	
-	public static void main(String[] args){
-		int[] v1;
-		int[] v2;
+public class Teste {
+	public static void main (String[] args) {
+		int[] empty = new int[0];
+		Conjunto A = new Conjunto(empty);
+		A.append(9);
+		A.append(8);
+		A.append(1);
 
-		int n = 4;
 
-		v1 = new int[n];
+		Conjunto B = new Conjunto(empty);
+		B.append(9);
+		B.append(1);
+		B.append(8);
+		B.append(5);
 
-		// Coloca valores em v1
-		for(int i = 0; i < n; i++){
-			v1[i] = i;
+		if (A.checkSubset(B)) {
+			System.out.println("SHOWWWW");
+		} else {
+			System.out.println("VALA");
 		}
 
-		// Printa os valores de v1
-		for(int i = 0; i < n; i++){
-			System.out.println(v1[i]);
-		}
 	}
 }

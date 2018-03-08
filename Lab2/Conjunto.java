@@ -1,24 +1,35 @@
-/*
+import java.util.ArrayList;
 
-- Métodos
+class Conjunto {
+	ArrayList<Integer> set = new ArrayList<Integer>();
 
-(1) a criação de conjuntos, 
-(2) inserção de elementos em um conjunto, 
-(3) verificação da pertinência de um elemento a um conjunto, 
-(4) verificação se um conjunto é subconjunto de outro, 
-(5) a união de conjuntos, 
-(6) a intersecção de conjuntos
-(7) a diferença entre dois conjuntos.
+	Conjunto (int[] elements) {
+		for (int element : elements) {
+			append(element);
+		}
+	}
 
-*/
+	public boolean append (int newEl) {
+		if (set.contains(newEl)) {
+			return false; 
+		}
 
-public class Conjunto{
-	int[] elementos;
-	int numElementos;
+		set.add(newEl);
+		return true;
+	}
 
+	public boolean checkSubset (Conjunto B) {
+		for (int element : B.getElements()) {
+			if (!set.contains(element)) {
+				return false;
+			}
+		}
+		return true;
+	}
 
-	public void setElementos(int []elementos){
-		this.elementos = ;
-
+	public Integer[] getElements () {
+		Integer[] returnedArray = new Integer[set.size()];
+		set.toArray(returnedArray);
+		return returnedArray;
 	}
 }
