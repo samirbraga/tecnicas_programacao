@@ -32,4 +32,16 @@ class Conjunto {
 		set.toArray(returnedArray);
 		return returnedArray;
 	}
+
+	public Conjunto intersection(Conjunto B){
+		ArrayList<Integer> setIntersection = new ArrayList<Integer>();
+
+		for (int element : B.getElements()){
+			if (set.contains(element)) {
+				setIntersection.append(element);
+		}
+
+		return setIntersection;
+
+	}
 }
