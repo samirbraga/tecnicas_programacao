@@ -33,15 +33,29 @@ class Conjunto {
 		return returnedArray;
 	}
 
+
+	public ArrayList difference(Conjunto B){
+		ArrayList<Integer> setDifference = new ArrayList<Integer>();
+
+		for (int element : B.getElements()){
+			if (!set.contains(element)){
+				setDifference.add(element);
+			}
+		}
+
+		return setDifference;
+	}
+
 	public Conjunto intersection(Conjunto B){
 		ArrayList<Integer> setIntersection = new ArrayList<Integer>();
 
 		for (int element : B.getElements()){
 			if (set.contains(element)) {
 				setIntersection.append(element);
-		}
+			}
 
 		return setIntersection;
 
+		}
 	}
 }
