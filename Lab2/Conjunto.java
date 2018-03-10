@@ -43,47 +43,49 @@ class Conjunto {
 	}
 
 	/* União dos conjuntos A e B */
-	public ArrayList union(Conjunto B){
-		Conjunto conjuntoUniao = new Conjunto;
-		ArrayList<Integer> setUnion = new ArrayList<Integer>();
+	public Conjunto union(Conjunto B){
+		int[] empty = new int[0];
+		Conjunto unionSet = new Conjunto(empty);
 
 		// Copia os elementos de A para setUnion
 		for (int element : set){
-			if (!setUnion.contains(element)) {
-				setUnion.add(element);
+			if (!unionSet.checkElement(element)) {
+				unionSet.append(element);
 			}
 		}
 
 		// Copia os elementos de B para setUnion
 		for (int element : B.getElements()){
-			if (!setUnion.contains(element)) {
-				setUnion.add(element);
+			if (!unionSet.checkElement(element)) {
+				unionSet.append(element);
 			}
 		}
-		return setUnion;
+		return unionSet;
 	}
 
 	/* Interseção entre os conjuntos A e B */
-	public ArrayList intersection(Conjunto B){
-		ArrayList<Integer> setIntersection = new ArrayList<Integer>();
+	public Conjunto intersection(Conjunto B){
+		int[] empty = new int[0];
+		Conjunto intersectionSet = new Conjunto(empty);
 
 		for (int element : B.getElements()){
 			if (set.contains(element)) {
-				setIntersection.add(element);
+				intersectionSet.append(element);
 			}
 		}
-		return setIntersection;
+		return intersectionSet;
 	}
 
-	/* Diferença entre os conjuntos B e A */
-	public ArrayList difference(Conjunto B){
-		ArrayList<Integer> setDifference = new ArrayList<Integer>();
+	/* Diferença entre os conjuntos A e B */
+	public Conjunto difference(Conjunto B){
+		int[] empty = new int[0];
+		Conjunto differenceSet = new Conjunto(empty);
 
-		for (int element : B.getElements()){
-			if (!set.contains(element)){
-				setDifference.add(element);
+		for (int element : set){
+			if (!B.checkElement(element)){
+				differenceSet.append(element);
 			}
 		}
-		return setDifference;
+		return differenceSet;
 	}
 }

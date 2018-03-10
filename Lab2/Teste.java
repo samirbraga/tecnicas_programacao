@@ -2,8 +2,7 @@ import java.util.ArrayList;
 
 public class Teste {
 	public static void main (String[] args) {
-
-	ArrayList<Integer> test = new ArrayList<Integer>();
+		Conjunto test;
 
 		int[] empty = new int[0];
 		Conjunto A = new Conjunto(empty);
@@ -22,7 +21,7 @@ public class Teste {
 
 		test = A.union(B);
 		System.out.println("Teste de União entre conjuntos");
-		for(int element : test){
+		for(int element : test.getElements()){
 			System.out.print(element + " - ");
 		}
 
@@ -30,15 +29,24 @@ public class Teste {
 
 		test = A.intersection(B);
 		System.out.println("Teste de Interseção entre conjuntos");
-		for(int element : test){
+		for(int element : test.getElements()){
 			System.out.print(element + " - ");
 		}
 
 		System.out.println("\n ==================================== \n");
 
-		test = A.difference(B);
+		test = A.difference(B);	
 		System.out.println("Teste de Diferença entre conjuntos");
-		for(int element : test){
+		for(int element : test.getElements()){
+			System.out.print(element + " - ");
+		}
+
+
+		System.out.println("\n ==================================== \n");
+
+		test = A.difference(B).union(A);	
+		System.out.println("Teste de Diferença e União entre conjuntos");
+		for(int element : test.getElements()){
 			System.out.print(element + " - ");
 		}
 
