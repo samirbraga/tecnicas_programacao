@@ -10,6 +10,8 @@ public class Teste {
 		A.append(9);
 		A.append(8);
 		A.append(1);
+		A.append(10);
+		A.append(19);
 
 
 		Conjunto B = new Conjunto(empty);
@@ -18,21 +20,37 @@ public class Teste {
 		B.append(8);
 		B.append(5);
 
-		test = A.difference(B);
+		test = A.union(B);
+		System.out.println("Teste de União entre conjuntos");
 		for(int element : test){
-			System.out.println(element);
+			System.out.print(element + " - ");
 		}
+
+		System.out.println("\n ==================================== \n");
 
 		test = A.intersection(B);
+		System.out.println("Teste de Interseção entre conjuntos");
 		for(int element : test){
-			System.out.println(element);
+			System.out.print(element + " - ");
+		}
+
+		System.out.println("\n ==================================== \n");
+
+		test = A.difference(B);
+		System.out.println("Teste de Diferença entre conjuntos");
+		for(int element : test){
+			System.out.print(element + " - ");
 		}
 
 
+		System.out.println("\n ==================================== \n");
+
+
+		System.out.println("Teste entre conjuntos");
 		if (A.checkSubset(B)) {
-			System.out.println("SHOWWWW");
+			System.out.println("É subconjunto");
 		} else {
-			System.out.println("VALA");
+			System.out.println("Não é subconjunto");
 		}
 
 	}

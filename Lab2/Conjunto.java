@@ -11,11 +11,18 @@ class Conjunto {
 
 	/* Adiciona elementos em um conjunto */
 	public boolean append (int newEl) {
-		if (set.contains(newEl)) {
-			return false; 
+		if (!checkElement(newEl)) {
+			set.add(newEl);
+			return true;
 		}
-		set.add(newEl);
-		return true;
+		return false; 
+	}
+
+	public boolean checkElement (int newEl) {
+		if (set.contains(newEl)) {
+			return true; 
+		}
+		return false;
 	}
 
 	/* Verifica se B é subconjunto de A */
@@ -35,16 +42,24 @@ class Conjunto {
 		return returnedArray;
 	}
 
-	/* Diferença entre os conjuntos B e A */
-	public ArrayList difference(Conjunto B){
-		ArrayList<Integer> setDifference = new ArrayList<Integer>();
+	/* União dos conjuntos A e B */
+	public ArrayList union(Conjunto B){
+		ArrayList<Integer> setUnion = new ArrayList<Integer>();
 
-		for (int element : B.getElements()){
-			if (!set.contains(element)){
-				setDifference.add(element);
+		// Copia os elementos de A para setUnion
+		for (int element : set){
+			if (!setUnion.contains(element)) {
+				setUnion.add(element);
 			}
 		}
-		return setDifference;
+
+		// Copia os elementos de B para setUnion
+		for (int element : B.getElements()){
+			if (!setUnion.contains(element)) {
+				setUnion.add(element);
+			}
+		}
+		return setUnion;
 	}
 
 	/* Interseção entre os conjuntos A e B */
@@ -57,5 +72,17 @@ class Conjunto {
 			}
 		}
 		return setIntersection;
+	}
+
+	/* Diferença entre os conjuntos B e A */
+	public ArrayList difference(Conjunto B){
+		ArrayList<Integer> setDifference = new ArrayList<Integer>();
+
+		for (int element : B.getElements()){
+			if (!set.contains(element)){
+				setDifference.add(element);
+			}
+		}
+		return setDifference;
 	}
 }
