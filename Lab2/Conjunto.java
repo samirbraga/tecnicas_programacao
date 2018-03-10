@@ -25,6 +25,13 @@ class Conjunto {
 		return false;
 	}
 
+	public boolean isEmpty(){
+		if(set.size() > 0){
+			return false;
+		}
+		return true;
+	}
+
 	/* Verifica se B é subconjunto de A */
 	public boolean checkSubset (Conjunto B) {
 		for (int element : B.getElements()) {
@@ -43,7 +50,7 @@ class Conjunto {
 	}
 
 	/* União dos conjuntos A e B */
-	public Conjunto union(Conjunto B){
+	public Conjunto union (Conjunto B){
 		int[] empty = new int[0];
 		Conjunto unionSet = new Conjunto(empty);
 
@@ -64,7 +71,7 @@ class Conjunto {
 	}
 
 	/* Interseção entre os conjuntos A e B */
-	public Conjunto intersection(Conjunto B){
+	public Conjunto intersection (Conjunto B){
 		int[] empty = new int[0];
 		Conjunto intersectionSet = new Conjunto(empty);
 
@@ -77,7 +84,7 @@ class Conjunto {
 	}
 
 	/* Diferença entre os conjuntos A e B */
-	public Conjunto difference(Conjunto B){
+	public Conjunto difference (Conjunto B){
 		int[] empty = new int[0];
 		Conjunto differenceSet = new Conjunto(empty);
 
@@ -87,5 +94,20 @@ class Conjunto {
 			}
 		}
 		return differenceSet;
+	}
+
+	public boolean equals (Conjunto B){
+		for(int element : B.getElements()){
+			if(!set.contains(element)){
+				return false;
+			}
+		}
+
+		for(int element : set){
+			if(!B.checkElement(element)){
+				return false;
+			}
+		}
+		return true;
 	}
 }
