@@ -44,6 +44,7 @@ class Conjunto {
 
 	/* União dos conjuntos A e B */
 	public ArrayList union(Conjunto B){
+		Conjunto conjuntoUniao = new Conjunto;
 		ArrayList<Integer> setUnion = new ArrayList<Integer>();
 
 		// Copia os elementos de A para setUnion
