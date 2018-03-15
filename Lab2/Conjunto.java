@@ -6,7 +6,7 @@ class Conjunto {
 	Conjunto (){
 
 	}
-	
+
 	Conjunto (int[] elements) {
 		for (int element : elements) {
 			append(element);
@@ -55,8 +55,7 @@ class Conjunto {
 
 	/* União dos conjuntos A e B */
 	public Conjunto union (Conjunto B) {
-		int[] empty = new int[0];
-		Conjunto unionSet = new Conjunto(empty);
+		Conjunto unionSet = new Conjunto();
 
 		// Copia os elementos de A para setUnion
 		for (int element : set) {
@@ -76,7 +75,6 @@ class Conjunto {
 
 	/* Interseção entre os conjuntos A e B */
 	public Conjunto intersection (Conjunto B) {
-		int[] empty = new int[0];
 		Conjunto intersectionSet = new Conjunto();
 
 		for (int element : B.getElements()) {
@@ -89,7 +87,6 @@ class Conjunto {
 
 	/* Diferença entre os conjuntos A e B */
 	public Conjunto difference (Conjunto B){
-		int[] empty = new int[0];
 		Conjunto differenceSet = new Conjunto();
 
 		for (int element : this.getElements()) {
@@ -115,5 +112,20 @@ class Conjunto {
 		return true;
 	}
 
-	
+	/* Produto cartesiano de A x B */
+	public ArrayList cartesianProduct (Conjunto B) {
+		ArrayList<Object> product = new ArrayList<Object>();
+
+		for (int elementA : this.getElements()) {
+			for (int elementB : B.getElements()) {
+				product.add("(" + elementA + ", " + elementB + ")");
+			}
+		}
+		return product;
+	}
+
+	/* Conjunto potência de A */
+	public ArrayList powerPackage () {
+		ArrayList<Conjunto> potency = new ArrayList<Object>();
+	}
 }
