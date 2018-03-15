@@ -2,9 +2,6 @@ import java.util.ArrayList;
 
 public class Lab2 {
 	public static void main (String[] args) {
-		Conjunto test;
-
-		int[] empty = new int[0];
 
 		int[] vetorNaturais = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 		int[] vetorPares = {2, 4, 6, 8, 10};
@@ -21,7 +18,7 @@ public class Lab2 {
 		System.out.println("\n ==================================== \n");
 
 		System.out.println("Conjunto 4 é subconjunto de si mesmo");
-		if (primos.checkSubset(primos)) {
+		if (primos.checkSubset(pares)) {
 			System.out.println("É subconjunto");
 		} else {
 			System.out.println("Não é subconjunto");
