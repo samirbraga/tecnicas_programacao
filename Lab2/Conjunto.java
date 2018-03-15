@@ -3,39 +3,43 @@ import java.util.ArrayList;
 class Conjunto {
 	ArrayList<Integer> set = new ArrayList<Integer>();
 
-	Conjunto(int[] elements){
-		for(int element : elements){
+	Conjunto (){
+
+	}
+	
+	Conjunto (int[] elements) {
+		for (int element : elements) {
 			append(element);
 		}
 	}
 
 	/* Adiciona elementos em um conjunto */
-	public boolean append(int newEl){
-		if(!checkElement(newEl)){
+	public boolean append (int newEl) {
+		if (!checkElement(newEl)) {
 			set.add(newEl);
 			return true;
 		}
 		return false; 
 	}
 
-	public boolean checkElement(int newEl){
-		if(set.contains(newEl)){
+	public boolean checkElement (int newEl) {
+		if (set.contains(newEl)){
 			return true; 
 		}
 		return false;
 	}
 
 	public boolean isEmpty(){
-		if(set.size() > 0){
+		if (set.size() > 0) {
 			return false;
 		}
 		return true;
 	}
 
 	/* Verifica se B é subconjunto de A */
-	public boolean checkSubset(Conjunto B){
-		for(int element : B.getElements()){
-			if(!this.checkElement(element)){
+	public boolean checkSubset (Conjunto B) {
+		for (int element : B.getElements()) {
+			if (!this.checkElement(element)) {
 				return false;
 			}
 		}
@@ -43,26 +47,26 @@ class Conjunto {
 	}
 
 	/* Retorna um Arraylist com os elementos de um conjunto */
-	public Integer[] getElements(){
+	public Integer[] getElements () {
 		Integer[] returnedArray = new Integer[set.size()];
 		set.toArray(returnedArray);
 		return returnedArray;
 	}
 
 	/* União dos conjuntos A e B */
-	public Conjunto union (Conjunto B){
+	public Conjunto union (Conjunto B) {
 		int[] empty = new int[0];
 		Conjunto unionSet = new Conjunto(empty);
 
 		// Copia os elementos de A para setUnion
-		for (int element : set){
+		for (int element : set) {
 			if (!unionSet.checkElement(element)) {
 				unionSet.append(element);
 			}
 		}
 
 		// Copia os elementos de B para setUnion
-		for (int element : B.getElements()){
+		for (int element : B.getElements()) {
 			if (!unionSet.checkElement(element)) {
 				unionSet.append(element);
 			}
@@ -71,11 +75,11 @@ class Conjunto {
 	}
 
 	/* Interseção entre os conjuntos A e B */
-	public Conjunto intersection (Conjunto B){
+	public Conjunto intersection (Conjunto B) {
 		int[] empty = new int[0];
-		Conjunto intersectionSet = new Conjunto(empty);
+		Conjunto intersectionSet = new Conjunto();
 
-		for (int element : B.getElements()){
+		for (int element : B.getElements()) {
 			if (this.checkElement(element)) {
 				intersectionSet.append(element);
 			}
@@ -86,9 +90,9 @@ class Conjunto {
 	/* Diferença entre os conjuntos A e B */
 	public Conjunto difference (Conjunto B){
 		int[] empty = new int[0];
-		Conjunto differenceSet = new Conjunto(empty);
+		Conjunto differenceSet = new Conjunto();
 
-		for (int element : this.getElements()){
+		for (int element : this.getElements()) {
 			if (!B.checkElement(element)){
 				differenceSet.append(element);
 			}
@@ -97,17 +101,19 @@ class Conjunto {
 	}
 
 	public boolean equals (Conjunto B){
-		for(int element : B.getElements()){
-			if(!this.checkElement(element)){
+		for(int element : B.getElements()) {
+			if(!this.checkElement(element)) {
 				return false;
 			}
 		}
 
-		for(int element : this.getElements()){
-			if(!B.checkElement(element)){
+		for(int element : this.getElements()) {
+			if(!B.checkElement(element)) {
 				return false;
 			}
 		}
 		return true;
 	}
+
+	
 }
