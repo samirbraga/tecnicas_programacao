@@ -3,23 +3,23 @@ import java.util.ArrayList;
 class Conjunto {
 	ArrayList<Integer> set = new ArrayList<Integer>();
 
-	Conjunto (int[] elements) {
-		for (int element : elements) {
+	Conjunto(int[] elements){
+		for(int element : elements){
 			append(element);
 		}
 	}
 
 	/* Adiciona elementos em um conjunto */
-	public boolean append (int newEl) {
-		if (!checkElement(newEl)) {
+	public boolean append(int newEl){
+		if(!checkElement(newEl)){
 			set.add(newEl);
 			return true;
 		}
 		return false; 
 	}
 
-	public boolean checkElement (int newEl) {
-		if (set.contains(newEl)) {
+	public boolean checkElement(int newEl){
+		if(set.contains(newEl)){
 			return true; 
 		}
 		return false;
@@ -33,9 +33,9 @@ class Conjunto {
 	}
 
 	/* Verifica se B é subconjunto de A */
-	public boolean checkSubset (Conjunto B) {
-		for (int element : B.getElements()) {
-			if (!set.contains(element)) {
+	public boolean checkSubset(Conjunto B){
+		for(int element : B.getElements()){
+			if(!this.checkElement(element)){
 				return false;
 			}
 		}
@@ -43,7 +43,7 @@ class Conjunto {
 	}
 
 	/* Retorna um Arraylist com os elementos de um conjunto */
-	public Integer[] getElements () {
+	public Integer[] getElements(){
 		Integer[] returnedArray = new Integer[set.size()];
 		set.toArray(returnedArray);
 		return returnedArray;
@@ -76,7 +76,7 @@ class Conjunto {
 		Conjunto intersectionSet = new Conjunto(empty);
 
 		for (int element : B.getElements()){
-			if (set.contains(element)) {
+			if (this.checkElement(element)) {
 				intersectionSet.append(element);
 			}
 		}
@@ -88,7 +88,7 @@ class Conjunto {
 		int[] empty = new int[0];
 		Conjunto differenceSet = new Conjunto(empty);
 
-		for (int element : set){
+		for (int element : this.getElements()){
 			if (!B.checkElement(element)){
 				differenceSet.append(element);
 			}
@@ -98,12 +98,12 @@ class Conjunto {
 
 	public boolean equals (Conjunto B){
 		for(int element : B.getElements()){
-			if(!set.contains(element)){
+			if(!this.checkElement(element)){
 				return false;
 			}
 		}
 
-		for(int element : set){
+		for(int element : this.getElements()){
 			if(!B.checkElement(element)){
 				return false;
 			}
