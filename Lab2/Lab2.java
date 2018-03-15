@@ -19,7 +19,7 @@ public class Lab2 {
 		Conjunto impares = new Conjunto(vetorImpares);
 		Conjunto primos = new Conjunto(vetorPrimos);
 
-/*
+
 		System.out.print("--- Conjuntos--- \n1 - Conjunto dos naturais\n2 - Conjunto dos pares\n3 - Conjunto dos impares\n4 - Conjunto dos primos\n  ");
 
 		System.out.println("\n ==================================== \n");
@@ -67,44 +67,42 @@ public class Lab2 {
 		}
 
 		System.out.print("\n");
-*/		
-			Conjunto universe = new Conjunto(vectorUniverse);
-            Conjunto a = new Conjunto(vectorA_5);
-            Conjunto b = new Conjunto(vectorA_5);
-            Conjunto inverseA = universe.difference(a);
-            Conjunto inverseB = universe.difference(b);
-            Conjunto a_Intersection_b = a.intersection(b);
-            Conjunto a_Union_b = a.union(b);
+		
+		Conjunto universe = new Conjunto(vectorUniverse);
+        Conjunto a = new Conjunto(vectorA_5);
+		Conjunto b = new Conjunto(vectorA_5);
+        Conjunto inverseA = universe.difference(a);
+        Conjunto inverseB = universe.difference(b);
+        Conjunto a_Intersection_b = a.intersection(b);
+        Conjunto a_Union_b = a.union(b);
 
             
-			Conjunto result_1 = universe.difference(a_Union_b);
+		Conjunto result_1 = universe.difference(a_Union_b);
 
-			Conjunto result_2 = inverseA.intersection(inverseB);
-			
-			System.out.println("A) Verificando se ¬( A U B) = ¬A ∩ ¬B é uma proposicao valida.");
+		Conjunto result_2 = inverseA.intersection(inverseB);
+		
+		System.out.println("A) Verificando se ¬( A U B) = ¬A ∩ ¬B é uma proposicao valida.");
 
-            if (result_1.equals(result_2)) {
+        if (result_1.equals(result_2)) {
 
-            	System.out.println("VALIDO : ¬( A U B) = ¬A ∩ ¬B");
-            	
-            }else{
+        	System.out.println("VALIDO : ¬( A U B) = ¬A ∩ ¬B");
+        	
+        }else{
 
-            	System.out.println("A proposicao está errada!");
+        	System.out.println("A proposicao está errada!");
 
-            }
+        }
 
-            result_1 = universe.difference(a_Intersection_b);
-            result_2 = inverseA.union(inverseB);
+        result_1 = universe.difference(a_Intersection_b);
+        result_2 = inverseA.union(inverseB);
 
-            System.out.println("B) Verificando se ¬(A ∩ B) = ¬A U ¬B é uma proposicao valida.");
+        System.out.println("B) Verificando se ¬(A ∩ B) = ¬A U ¬B é uma proposicao valida.");
 
-            if (result_1.equals(result_2)) {
-            	System.out.println("VALIDO : ¬(A ∩ B) = ¬A U ¬B");
-            }else{
-            	System.out.println("A proposicao está errada!");
-            }
+        if (result_1.equals(result_2)) {
+        	System.out.println("VALIDO : ¬(A ∩ B) = ¬A U ¬B");
+        }else{
+        	System.out.println("A proposicao está errada!");
+        }
 
 	}
-
 }
-
