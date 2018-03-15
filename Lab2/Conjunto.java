@@ -126,6 +126,7 @@ class Conjunto {
 
 	/* Conjunto potência de A */
 	public ArrayList powerPackage () {
-		ArrayList<Conjunto> potency = new ArrayList<Object>();
+		ArrayList<Conjunto> potency = new ArrayList<Conjunto>();
+		return potency;
 	}
 }
