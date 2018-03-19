@@ -30,7 +30,25 @@ public class Lab2 {
 
 		System.out.println("\n ==================================== \n");
 
-		System.out.println("A pertinência dos conjuntos 2, 3 e 4 no conjunto 1");
+		System.out.println("A pertinência dos conjuntos 2, 3 e 4 no conjunto 1\n");
+
+		if(naturais.checkSubset(pares)){
+			System.out.println("O conjunto dos 'PARES' perciste no conjunto dos 'NATURAIS'");
+		}else{
+			System.out.println("NÃO há percistencia entre o conjunto dos 'NATURAIS' e os 'PARES'!");
+		}
+
+		if(naturais.checkSubset(impares)){
+			System.out.println("O conjunto dos 'IMPARES' perciste no conjunto dos 'NATURAIS'");
+		}else{
+			System.out.println("NÃO há percistencia entre o conjunto dos 'NATURAIS' e os 'IMPARES'!");
+		}
+
+		if(naturais.checkSubset(primos)){
+			System.out.println("O conjunto dos 'PRIMOS' perciste no conjunto dos 'NATURAIS'");
+		}else{
+			System.out.println("NÃO há percistencia entre o conjunto dos 'NATURAIS' e os 'PRIMOS'!");
+		}
 
 		System.out.println("\n ==================================== \n");
 
@@ -106,7 +124,7 @@ public class Lab2 {
         	
         }else{
 
-        	System.out.println("A proposicao está errada!");
+        	System.out.println("A proposicao A) está errada!");
 
         }
 
@@ -118,7 +136,7 @@ public class Lab2 {
         if (result_1.equals(result_2)) {
         	System.out.println("VALIDO : ¬(A ∩ B) = ¬A U ¬B");
         }else{
-        	System.out.println("A proposicao está errada!");
+        	System.out.println("A proposicao B) está errada!");
         }
 
 	}
