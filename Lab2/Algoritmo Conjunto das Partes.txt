@@ -1,0 +1,37 @@
+Seja {1, 2, 3, 4, 5} o conjunto inicial
+
+
+O seguinte algoritmo consiste em criar o Conjunto das Partes de um dado conjunto.
+
+O algoritmo funcionará enfileirando o elementos iniciais e em seguida criando um novo conjunto
+com os elementos já enfileirados juntamente com o próximo elemento do conjunto inicial.
+
+Iniciamos a fila com o primeiro elemento do conjunto inicial.
+Após isso insere-se a combinação deste elemento ja enfileirado com os outros elementos.
+
+Ex.:
+
+1 // primeiro enfileirado
+1 2, 1 3, 1 4, 1 5 // combinação do primeiro enfileirado com os demais elementos
+
+Após enfileirar todas as primeiras combinações, desenfileira-se o primeiro elemento
+
+OBS: Ao desenfileirar o elemento, deve-se adicioná-lo em conjunto nomeado Conjunto das Partes
+
+O algoritmo funciona basicamente assim. Enfileira-se a combinação de todos os elementos com o primeiro 
+e depois desenfileira o primeiro e o adiociona no Conjunto das Partes
+
+
+Exemplo mais geral
+
+1
+1 2, 1 3, 1 4, 1 5 // combinações do 1
+1 2 3, 1 2 4, 1 2 5 // combinações do 1 2
+1 3 4, 1 3 5 // combinações do 1 3
+1 4 5 // combinações do 1 4
+1 2 3 4, 1 2 3 5 // combinações do 1 2 3
+1 2 4 5 // combinações do 1 2 4
+1 3 4 5 // combinações do 1 3 4
+1 2 3 4 5 // combinações do 1 2 3 4
+
+Quando a Fila estiver vazia, passa para o segundo elemento do Conjunto Inicial e repete os mesmos passos.
