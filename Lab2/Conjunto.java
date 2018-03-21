@@ -22,6 +22,15 @@ class Conjunto {
 		return false; 
 	}
 
+	public int size(){
+		int i = 0;
+
+		for (int element : this.getElements()) {
+			i++;
+		}
+		return i;
+	}
+
 	public boolean checkElement (int newEl) {
 		if (set.contains(newEl)){
 			return true; 
@@ -125,8 +134,34 @@ class Conjunto {
 	}
 
 	/* Conjunto potência de A */
-	public ArrayList powerPackage () {
-		ArrayList<Conjunto> potency = new ArrayList<Conjunto>();
+	public Conjunto parties () {
+		Conjunto potency = new Conjunto();
+		Arraylist<Conjunto> conjunto = new Arraylist<Conjunto>();
+		Fila permutacoes = new Fila();
+
+		for (int element : this.getElements()) {
+			conjunto.add(element);
+		}
+
+		// Cada elemento é um conjunto, logo a fila é um conjunto de COnjuntos
+		// Deve-se adicionar na fila somente conjuntos
+
+		int i = -1;
+		while (i < conjunto.size() - 1){
+			if(permutacoes.estaVazia()){
+				i++;
+				permutacoes.adicionar(conjunto.get(i));
+			}
+
+			int elemento = permutacoes.remover();
+			potency.append(elemento);
+
+
+
+
+
+		}
+
 		return potency;
 	}
 }
