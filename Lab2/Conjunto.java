@@ -7,6 +7,16 @@ class Conjunto {
 
 	}
 
+	Conjunto (int element) {
+		append(element);
+	}
+
+	Conjunto (Integer[] elements) {
+		for (int element : elements) {
+			append(element);
+		}
+	}
+
 	Conjunto (int[] elements) {
 		for (int element : elements) {
 			append(element);
@@ -134,34 +144,51 @@ class Conjunto {
 	}
 
 	/* Conjunto potência de A */
-	public Conjunto parties () {
-		Conjunto potency = new Conjunto();
-		Arraylist<Conjunto> conjunto = new Arraylist<Conjunto>();
+	public ArrayList parties () {
+		/* Cada elemento do conjunto A será transformado em um conjunto e guardado em initialSet */
+		boolean verificador;
+		int i = -1;
+		Conjunto setElement;
+		Conjunto nextElement;
+		Conjunto excluded;
+		
+		/* List que contem os conjuntos dos elementos de A */
+		ArrayList<Conjunto> initialSet = new ArrayList<Conjunto>();
+
+		/* Conjunto potencia de A */
+		ArrayList<Conjunto> potencySet = new ArrayList<Conjunto>();
+		
 		Fila permutacoes = new Fila();
 
 		for (int element : this.getElements()) {
-			conjunto.add(element);
+			setElement = new Conjunto(element);
+			initialSet.add(setElement);
 		}
 
-		// Cada elemento é um conjunto, logo a fila é um conjunto de COnjuntos
-		// Deve-se adicionar na fila somente conjuntos
-
-		int i = -1;
-		while (i < conjunto.size() - 1){
+		while (i < initialSet.size() - 1){ // verificar validade do -1 
+			verificador = false;
 			if(permutacoes.estaVazia()){
 				i++;
-				permutacoes.adicionar(conjunto.get(i));
+				permutacoes.adicionar(initialSet.get(i));
 			}
 
-			int elemento = permutacoes.remover();
-			potency.append(elemento);
+			for (int element : this.getElements()){
+				
+				nextElement = new Conjunto(permutacoes.get(0).getElements());
 
+				if(nextElement.append(element)){
+					permutacoes.adicionar(nextElement);
+				}
+			}
+			
+			excluded = permutacoes.remover();
 
+			for (Conjunto potencyElement : potencySet) {
+				if(potencyElement.equals(excluded)) verificador = true;
+			}
 
-
-
+			if(!verificador) potencySet.add(excluded);
 		}
-
-		return potency;
+		return potencySet;
 	}
 }

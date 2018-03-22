@@ -88,14 +88,30 @@ public class Lab2 {
 
 		System.out.println("O produto cartesiano de 2 e 3");
 
+
 		int i = 0;
+	
 		ArrayList produtoCartesiano = pares.cartesianProduct(impares);
 		for (Object element : produtoCartesiano){
 			System.out.print(element + ", ");
 			i++;
 			if (i % 5 == 0) System.out.println("");
 		}
+
+		System.out.print("\n");
 		
+		System.out.println("\n ==================================== \n");
+
+		System.out.println("O conjunto das partes dos naturais");
+		
+		ArrayList<Conjunto> potencia = naturais.parties();
+
+		for (Conjunto subconjuntos : potencia){
+			for (int elementos : subconjuntos.getElements()) {
+				System.out.print(elementos + " - ");
+			}
+			System.out.println("");
+		}
 
 		System.out.print("\n");		
 

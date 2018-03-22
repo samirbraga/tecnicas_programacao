@@ -1,48 +1,57 @@
-class Fila{
-    int inicio;
-    int fim;
-    int tamanho;
-    int qtdeElementos;
-    Arraylist<Conjunto> f = new Arraylist<Conjunto>();
+import java.util.ArrayList; 
 
-    public Fila(){
-        inicio = fim = -1;
-        qtdeElementos = 0;
+class Fila extends Conjunto{
+
+    ArrayList<Conjunto> f = new ArrayList<Conjunto>();
+
+    Fila(){
     }
 
     public boolean estaVazia(){
-        if (qtdeElementos == 0){
+        if (f.size() == 0){
             return true;
         }
         return false;
     }
 
-    public void adicionar(Conjunto e){
-        
-            if (inicio == -1){
-                inicio = 0;
-            }
-            fim++;
-            f.add(e);
-            qtdeElementos++;
-        
+    public void adicionar(Conjunto sub){
+        if(checkSubSet(sub)){
+            f.add(sub);
+        }
+    }
+
+    public boolean checkSubSet(Conjunto sub){
+        for (Conjunto subconjunto : f){
+            if(subconjunto.equals(sub)){
+                return false;
+            }                
+        }
+        return true;
     }
 
     public Conjunto remover(){
         Conjunto elemento = null;
-        if (! estaVazia() ){
-            elemento = f.get(inicio);
-            inicio++;
-            qtdeElementos--;
+        if (!estaVazia()){
+            elemento = f.get(0);
+            f.remove(elemento);
         }
         return elemento;
     }
 
-    // public void mostrar(){
-    //     String elementos = "";
-    //         for (int i = inicio; i<=fim; i++) {
-    //             elementos += f[i]+ " - ";
-    //         }
-    //         System.out.println(elementos);
-    // }
+    public Conjunto get(int index){
+        return f.get(index);
+    }
+
+    public ArrayList<Conjunto> getFila(){
+        return this.f;
+    }
+
+    public void mostrar(){
+        for (Conjunto elemento : f) {
+            for (int element : elemento.getElements()){
+                System.out.print(element + " - ");
+            }
+            System.out.println("");
+        }
+    }
 }
