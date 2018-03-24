@@ -1,17 +1,22 @@
 class Teste {
     public static void main (String[] args) {
-        Conjunto meuConjunto = new Conjunto();
+        Conjunto meuConjunto1 = new Conjunto();
+        Conjunto meuConjunto2 = new Conjunto();
 
-        Inteiro meuInteiro = new Inteiro(4);
-        Texto meuTexto = new Texto("Hello");
-        Flutuante meuFlutuante = new Flutuante(22.4f);
+        Integer inteiro = new Integer(4);
+        String string = "Hello";
+        float flutuante = 22.4f;
 
-        meuConjunto.addElemento(meuInteiro);
-        meuConjunto.addElemento(meuTexto);
-        meuConjunto.addElemento(meuFlutuante);
+        meuConjunto1.append(inteiro);
+        meuConjunto1.append(string);
+        meuConjunto1.append(flutuante);
 
-        for (Elemento elemento : meuConjunto.getElementos()) {
-            System.out.println(Elemento.getElemento(elemento));
+        meuConjunto2.append(inteiro);
+        meuConjunto2.append(string);
+        meuConjunto2.append(flutuante);
+
+        for (Object elemento : meuConjunto1.cartesianProduct(meuConjunto2)) {
+            System.out.println(elemento);
         }
     }
 }
