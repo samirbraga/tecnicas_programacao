@@ -1,26 +1,28 @@
-class Circulo extends Figura{
-	
-	float radius;
+import java.lang.Math;
 
-	Circulo(float radius){
+public class Circulo extends Figura{
+	
+	private double radius;
+	private Ponto central = new Ponto();
+
+	Circulo(){
+		this(0);
+	}
+
+	Circulo(double radius){
 		this.radius = radius;
 	}
 
 	public void desenhar(){
-		System.out.println("Circulo");
+		System.out.println(this.toString());
 	}
 
-	public void mover(float dx , float dy){
-		this.x = dx;
-		this.y = dy;
+	public void mover(double dx, double dy){
+		this.central.setX(this.central.getX() + dx);
+		this.central.setY(this.central.getY() + dy);
 	}
 
-	public float calcularArea(){
-		float area =(float) (this.radius * this.radius * ((float)3.141592));
-		return area;
-	}
-
-	public String toString(){
-		return "Circulo";
+	public double calcularArea(){
+		return Math.PI * Math.pow(this.radius, 2);
 	}
 }

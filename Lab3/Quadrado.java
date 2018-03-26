@@ -1,30 +1,30 @@
 class Quadrado extends Figura{
 	
 	float height;
-	float whidth;
+	float width;
 
 	Quadrado(){}
 
-	public Quadrado(float height, float whidth){
+	public Quadrado(float height, float width){
 		this.height = height;
-		this.whidth = whidth;
+		this.width = width;
 	}
 
 	public void desenhar(){
-		System.out.println("Quadrado");
+		System.out.println(this.toString());
 	}
 
-	public void mover(float dx , float dy){
+	public void mover(float dx, float dy){
 		this.x = dx;
 		this.y = dy;
 	}
 
 	public float calcularArea(){
-		float area = this.x * this.y;
+		float area = this.height * this.width;
 		return area;
 	}
 
-	public String toString(){
-		return "Quadrado";
-	}
+	// public String toString(){
+	// 	return "Quadrado";
+	// }
 }
