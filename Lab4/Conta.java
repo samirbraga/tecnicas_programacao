@@ -1,16 +1,18 @@
 public abstract class Conta {
 	private static int n;
 	private int id;
-	private double saldo;
+	protected double saldo;
 
 	public Conta(id){
 		this.saldo = 0;
 		this.id = id;
 	}
 
-	public abstract public double getSaldo();
+	public double getSaldo(){
+		return this.saldo;
+	}
 
-	public abstract public boolean credito();
+	public abstract boolean credito();
 
-	public abstract public boolean debito();
+	public abstract boolean debito();
 }
