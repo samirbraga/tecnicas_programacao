@@ -5,12 +5,16 @@ class Plus extends Conta {
 	}
 
 	public boolean debito(double debito){ //sobrecarga
-		resultadoDebito = this.saldo - debito;
+		double resultadoDebito = this.saldo - debito;
 		if (resultadoDebito <= 0) {
 			return false;
 		}
 		this.saldo = resultadoDebito;
 		return true;
 
+	}
+
+	public String toString(){
+		return "Conta XPTO id ="+this.id+"  saldo da conta:"+this.saldo;
 	}
 }
