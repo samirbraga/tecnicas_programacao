@@ -1,6 +1,6 @@
 public abstract class Conta {
 	private static int n;
-	private int id;
+	protected int id;
 	protected double saldo;
 
 

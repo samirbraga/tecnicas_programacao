@@ -4,11 +4,11 @@ public class Plus extends Conta {
 		super(id);
 	}
 
-	public void credito(double credito){ //sobrecarga
+	public void credito(double credito){ 
 		super.saldo = super.saldo + (super.saldo*1.005);
 	}
 
-	public boolean debito(double debito){ //sobrecarga
+	public boolean debito(double debito){ 
 		double resultadoDebito = super.saldo - debito;
 		if (resultadoDebito <= 0) {
 			return false;
@@ -19,6 +19,6 @@ public class Plus extends Conta {
 	}
 
 	public String toString(){
-		return "Conta XPTO id =" + super.id + "  saldo da conta:" + super.saldo;
+		return "Conta XPTO Plus id =" + super.id + "  saldo da conta:" + super.saldo;
 	}
 }
