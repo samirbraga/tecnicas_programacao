@@ -12,7 +12,7 @@ public abstract class Conta {
 		return this.saldo;
 	}
 
-	public abstract boolean credito();
+	public abstract boolean credito(double valor);
 
-	public abstract boolean debito();
+	public abstract boolean debito(double valor);
 }

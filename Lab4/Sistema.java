@@ -1,5 +1,5 @@
 class Sistema {
-	static int n;
+	static int n = 0;
 	Conta[] contas = new Conta[100];
 
 	Conta criarContaXPTOBasic () {
