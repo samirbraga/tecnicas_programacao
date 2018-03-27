@@ -1,10 +1,10 @@
 class Sistema {
-	static int n;
+	static int n = 0;
 	Conta[] contas = new Conta[100];
 
 	Conta criarContaXPTOBasic () {
 		int id = n;
-		ContaBasic basic = new ContaBasic(id);
+		Basic basic = new Basic(id);
 		contas[n] = basic;
 		n++;
 		return basic;
@@ -12,7 +12,7 @@ class Sistema {
 
 	Conta criarContaXPTOPlus () {
 		int id = n;
-		ContaPlus plus = new ContaPlus(id);
+		Plus plus = new Plus(id);
 		contas[n] = plus;
 		n++;
 		return plus;
@@ -20,7 +20,7 @@ class Sistema {
 
 	Conta criarContaXPTOExtreme () {
 		int id = n;
-		ContaExtreme extreme = new ContaExtreme(id);
+		Extreme extreme = new Extreme(id);
 		contas[n] = extreme;
 		n++;
 		return extreme;
