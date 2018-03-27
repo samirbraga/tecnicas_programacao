@@ -1,3 +1,3 @@
-class Plus extends Conta{
+class Plus extends Conta {
 
 }

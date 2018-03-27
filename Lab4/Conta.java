@@ -1,4 +1,4 @@
-public abstract class Conta{
+public abstract class Conta {
 	private static int n;
 	private int id;
 	private double saldo;
