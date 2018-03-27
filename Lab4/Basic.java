@@ -1,12 +1,10 @@
 public class Basic extends Conta {
-	// public Conta(int id){
-	// 	super(id);
-	// }
+	public Basic(int id){
+		super(id);
+	}
 
-	public boolean credito(double valor){
-		if(super.saldo +=  valor)
-			return true;
-		return false;
+	public void credito(double valor){
+		super.saldo +=  valor;
 	}
 
 	public boolean debito(double valor){

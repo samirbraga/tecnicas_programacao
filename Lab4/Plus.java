@@ -1,20 +1,24 @@
-class Plus extends Conta {
-	public boolean credito(double credito){ //sobrecarga
-		this.saldo = this.saldo + (saldo*1.005);
-		return true;
+public class Plus extends Conta {
+
+	public Plus(int id){
+		super(id);
+	}
+
+	public void credito(double credito){ //sobrecarga
+		super.saldo = super.saldo + (super.saldo*1.005);
 	}
 
 	public boolean debito(double debito){ //sobrecarga
-		double resultadoDebito = this.saldo - debito;
+		double resultadoDebito = super.saldo - debito;
 		if (resultadoDebito <= 0) {
 			return false;
 		}
-		this.saldo = resultadoDebito;
+		super.saldo = resultadoDebito;
 		return true;
 
 	}
 
 	public String toString(){
-		return "Conta XPTO id ="+this.id+"  saldo da conta:"+this.saldo;
+		return "Conta XPTO id =" + super.id + "  saldo da conta:" + super.saldo;
 	}
 }

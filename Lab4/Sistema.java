@@ -1,4 +1,4 @@
-class Sistema {
+public class Sistema {
 	static int n = 0;
 	Conta[] contas = new Conta[100];
 

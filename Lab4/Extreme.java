@@ -1,9 +1,13 @@
 class Extreme extends Conta {
-	public abstract credito (double credito) {
+	public Extreme(int id){
+		super(id);
+	}
+
+	public void credito (double credito) {
 		this.saldo = this.saldo + credito+(credito*0.002);
 	}
 
-	public abstract debito (double debito) {
+	public boolean debito (double debito) {
 		double novoDebito = debido-(credito*0.002);
 		if (this.saldo-novoDebido < 0) {
 			return false;
