@@ -1,0 +1,12 @@
+abstract class Conta{
+	static int n;
+	int id;
+	double saldo;
+	String tipo;
+
+	abstract public double getSaldo();
+
+	abstract public boolean credito();
+
+	abstract public boolean debito();
+}
