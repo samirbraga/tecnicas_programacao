@@ -3,7 +3,6 @@ public abstract class Conta {
 	protected int id;
 	protected double saldo;
 
-
 	public Conta(int id){
 
 		this.saldo = 0;

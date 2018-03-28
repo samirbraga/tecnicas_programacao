@@ -10,8 +10,18 @@ public class Lab4{
 		contaPlus1.credito(100);
 		contaExtreme1.credito(100);
 
-		System.out.println("Saldo Conta Basic" + contaBasic1.getSaldo());
-		System.out.println("Saldo Conta Plus" + contaPlus1.getSaldo());
-		System.out.println("Saldo Conta Extreme" + contaExtreme1.getSaldo());
+		System.out.println(contaBasic1.toString());
+		System.out.println(contaPlus1.toString());
+		System.out.println(contaExtreme1.toString());
+
+		contaBasic1.debito(100);
+		contaPlus1.debito(100);
+		contaExtreme1.debito(100);
+
+		System.out.println(contaBasic1.toString());
+		System.out.println(contaPlus1.toString());
+		System.out.println(contaExtreme1.toString());
+
+
 	}
 }

@@ -1,8 +1,10 @@
-public class Sistema {
+import java.util.ArrayList;
+
+public class Sistema{
 	static int n = 0;
 	Conta[] contas = new Conta[100];
 
-	Conta criarContaXPTOBasic () {
+	Conta criarContaXPTOBasic(){
 		int id = n;
 		Conta basic = new Basic(id);
 		contas[n] = basic;
@@ -10,7 +12,7 @@ public class Sistema {
 		return basic;
 	}
 
-	Conta criarContaXPTOPlus () {
+	Conta criarContaXPTOPlus(){
 		int id = n;
 		Conta plus = new Plus(id);
 		contas[n] = plus;
@@ -18,7 +20,7 @@ public class Sistema {
 		return plus;
 	}
 
-	Conta criarContaXPTOExtreme () {
+	Conta criarContaXPTOExtreme(){
 		int id = n;
 		Conta extreme = new Extreme(id);
 		contas[n] = extreme;

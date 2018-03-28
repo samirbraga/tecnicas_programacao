@@ -1,23 +1,24 @@
-class Extreme extends Conta {.
+public class Extreme extends Conta{
+	
 	public Extreme(int id){
 		super(id);
 	}
 
-	public void credito (double credito) {.
-		this.saldo = this.saldo + credito+(credito*0.002);
+	public void credito(double credito){
+		super.saldo = super.saldo + credito + (credito*0.002);
 	}
 
-	public boolean debito (double debito) {.
-		double novoDebito = debido-(credito*0.002);
-		if (this.saldo-novoDebido < 0) {
+	public boolean debito(double debito){
+		double resultadoDebito = super.saldo - debito + (debito*0.002);
+		if (resultadoDebito < 0) {
 			return false;
 		}
 
-		this.saldo = this.saldo - debido-(credito*0.002);
+		super.saldo = resultadoDebito;
 		return true;
 	}
 
-	public String toString(){.
-		return "Conta XPTO Extreme id =" + super.id + "  saldo da conta:" + super.saldo;
+	public String toString(){
+		return "Conta XPTO Basic id = " + super.id + "  saldo da conta: R$ " + String.format("%.2f", super.saldo);
 	}
 }
