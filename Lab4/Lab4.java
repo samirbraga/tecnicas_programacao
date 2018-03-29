@@ -6,17 +6,13 @@ public class Lab4{
 		Conta contaPlus1 = banco.criarContaXPTOPlus();
 		Conta contaExtreme1 = banco.criarContaXPTOExtreme();
 
-		contaBasic1.credito(100);
-		contaPlus1.credito(100);
-		contaExtreme1.credito(100);
-
-		System.out.println(contaBasic1.toString());
-		System.out.println(contaPlus1.toString());
-		System.out.println(contaExtreme1.toString());
-
-		contaBasic1.debito(100);
-		contaPlus1.debito(100);
-		contaExtreme1.debito(100);
+		contaBasic1.credito(1000);
+		contaPlus1.credito(1000);
+		contaExtreme1.credito(1000);
+		
+		contaBasic1.debito(10);
+		contaPlus1.debito(10);
+		contaExtreme1.debito(10);
 
 		System.out.println(contaBasic1.toString());
 		System.out.println(contaPlus1.toString());
