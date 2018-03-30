@@ -1,33 +1,41 @@
 import java.lang.Math;
 
-public class Quadrado extends Figura{
+public class Quadrado extends Figura implements Colorida {
 	
 	private double lado;
 	private Ponto central;
 
-	Quadrado(Ponto central){
+	Quadrado(Ponto central) {
 		this(central, 0);
 	}
 
-	Quadrado(Ponto central, double lado){
+	Quadrado(Ponto central, double lado) {
 		this.central = central;
 		this.lado = lado;
 	}
 
-	public void desenhar(){
+	public void desenhar() {
 		System.out.println(this.toString());
 	}
 
-	public void mover(double dx, double dy){
+	public void desenhar(String cor) {
+		System.out.println(this.toString(cor));
+	}
+
+	public void mover(double dx, double dy) {
 		this.central.setX(this.central.getX() + dx);
 		this.central.setY(this.central.getY() + dy);
 	}
 
-	public double calcularArea(){
+	public double calcularArea() {
 		return Math.pow(this.lado, 2);
 	}
 
-	public String toString(){
+	public String toString() {
 		return "Quadrado";
+	}
+
+	public String toString(String cor) {
+		return "Quadrado " + cor;
 	}
 }
