@@ -3,14 +3,15 @@ import java.lang.Math;
 public class Circulo extends Figura{
 	
 	private double radius;
-	private Ponto central = new Ponto();
+	private Ponto central;
 
-	Circulo(){
-		this(0);
+	Circulo(Ponto central){
+		this(central, 0);
 	}
 
-	Circulo(double radius){
+	Circulo(Ponto central, double radius){
 		this.radius = radius;
+		this.central = central;
 	}
 
 	public void desenhar(){
@@ -24,5 +25,9 @@ public class Circulo extends Figura{
 
 	public double calcularArea(){
 		return Math.PI * Math.pow(this.radius, 2);
+	}
+
+	public String toString(){
+		return "Circulo";
 	}
 }

@@ -1,30 +1,33 @@
-class Quadrado extends Figura{
+import java.lang.Math;
+
+public class Quadrado extends Figura{
 	
-	float height;
-	float width;
+	private double lado;
+	private Ponto central;
 
-	Quadrado(){}
+	Quadrado(Ponto central){
+		this(central, 0);
+	}
 
-	public Quadrado(float height, float width){
-		this.height = height;
-		this.width = width;
+	Quadrado(Ponto central, double lado){
+		this.central = central;
+		this.lado = lado;
 	}
 
 	public void desenhar(){
 		System.out.println(this.toString());
 	}
 
-	public void mover(float dx, float dy){
-		this.x = dx;
-		this.y = dy;
+	public void mover(double dx, double dy){
+		this.central.setX(this.central.getX() + dx);
+		this.central.setY(this.central.getY() + dy);
 	}
 
-	public float calcularArea(){
-		float area = this.height * this.width;
-		return area;
+	public double calcularArea(){
+		return Math.pow(this.lado, 2);
 	}
 
-	// public String toString(){
-	// 	return "Quadrado";
-	// }
+	public String toString(){
+		return "Quadrado";
+	}
 }

@@ -1,6 +1,6 @@
-public abstract class Figura {
+public abstract class Figura{
 
-	abstract void desenhar();
-	abstract void mover(double dx , double dy);
-	abstract double calcularArea();
+	public abstract void desenhar();
+	public abstract double calcularArea();
+	public abstract void mover(double dx , double dy);
 }
