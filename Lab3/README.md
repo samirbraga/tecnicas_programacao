@@ -13,7 +13,7 @@
   - Criação dos métodos solicitados
   
 - Samir Braga
-
+  - Modelagem do problema e implementação da questão 4 e 5
   
 - Tibet Teixeira
   - Modelagem do problema
