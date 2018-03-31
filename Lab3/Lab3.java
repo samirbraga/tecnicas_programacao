@@ -35,10 +35,13 @@ public class Lab3 {
 			int r = rand.nextInt(100) + 1;
 
 			// escolhe aleatoriamente se o elemento criado sera instancia de circulo ou quadrado
-			if (rand.nextInt(2) == 1) {
+			int escolha = rand.nextInt(3);
+			if (escolha == 0) {
 				figuras2[i] = new Circulo(new Ponto(x, y), r);
-			} else {
+			} else if(escolha == 1){
 				figuras2[i] = new Quadrado(new Ponto(x, y), r);
+			}else{
+				figuras2[i] = new QuadradoColorido(new Ponto(x, y), r, "rosa");
 			}
 		}
 		
@@ -48,9 +51,10 @@ public class Lab3 {
 			// no caso apenas quadrados sao instancias de Colorida
 			if (figuras2[i] instanceof Colorida) {
 				// caso seja, imprime sua area
-				System.out.printf("Área da figura colorida: %.2f --  Quadrado\n", figuras2[i].calcularArea());
+				System.out.printf("Área da figura colorida: %.2f -- ", figuras2[i].calcularArea());
+				figuras2[i].desenhar();
 			} else {
-				System.out.println("Figura não colorida -- Círculo");
+				System.out.println("Figura não colorida -- "+figuras2[i].toString());
 			}
 		}
 	}

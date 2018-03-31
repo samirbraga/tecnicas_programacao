@@ -1,6 +1,6 @@
 import java.lang.Math;
 
-public class Quadrado extends Figura implements Colorida {
+public class Quadrado extends Figura{
 	
 	private double lado;
 	private Ponto central;
@@ -18,10 +18,6 @@ public class Quadrado extends Figura implements Colorida {
 		System.out.println(this.toString());
 	}
 
-	public void desenhar(String cor) {
-		System.out.println(this.toString(cor));
-	}
-
 	public void mover(double dx, double dy) {
 		this.central.setX(this.central.getX() + dx);
 		this.central.setY(this.central.getY() + dy);
@@ -33,9 +29,5 @@ public class Quadrado extends Figura implements Colorida {
 
 	public String toString() {
 		return "Quadrado";
-	}
-
-	public String toString(String cor) {
-		return "Quadrado " + cor;
 	}
 }
