@@ -1,3 +1,3 @@
 interface Colorida {
-    public void desenhar(String cor);
+    public void desenhar();
 }
