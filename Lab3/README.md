@@ -11,6 +11,7 @@
 - Daniel Rodrigues
   - Modelagem do problema
   - Criação dos métodos solicitados
+  - Modelagem do problema e implementação da questão 4 e 5
   
 - Samir Braga
   - Modelagem do problema e implementação da questão 4 e 5
