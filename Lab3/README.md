@@ -14,7 +14,8 @@
   - Modelagem do problema e implementação da questão 4 e 5
   
 - Samir Braga
-  - Modelagem do problema e implementação da questão 4 e 5
+  - Modelagem do problema 
+  - Implementação da questão 4 e 5
   
 - Tibet Teixeira
   - Modelagem do problema
