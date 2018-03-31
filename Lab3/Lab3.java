@@ -2,6 +2,9 @@ import java.util.Random;
 
 public class Lab3 {
 	public static void main(String[] args) {
+		
+		System.out.println("\n######################################\n#   TESTE - CLASSE ABSTRATA FIGURA   #\n######################################\n");
+
 		Figura[] figuras = new Figura[10];
 
 		figuras[0] = new Quadrado(new Ponto());
@@ -17,6 +20,8 @@ public class Lab3 {
 			figuras[i].desenhar();
 		}
 		
+		System.out.println("\n\n######################################\n#     TESTE - INTERFACE COLORIDA     #\n######################################\n");
+
 		Figura[] figuras2 = new Figura[10]; // cria um vetor com 10 figuras
 		for (int i = 0; i < 10; i++) { // percorre o vetor figuras2
 			Random rand = new Random(); // cria um objeto Random
@@ -43,7 +48,9 @@ public class Lab3 {
 			// no caso apenas quadrados sao instancias de Colorida
 			if (figuras2[i] instanceof Colorida) {
 				// caso seja, imprime sua area
-				System.out.println(figuras2[i].calcularArea());
+				System.out.printf("Área da figura colorida: %.2f --  Quadrado\n", figuras2[i].calcularArea());
+			} else {
+				System.out.println("Figura não colorida -- Círculo");
 			}
 		}
 	}
