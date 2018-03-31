@@ -17,8 +17,8 @@ public class Lab3 {
 			figuras[i].desenhar();
 		}
 		
-		Figura[] figuras2 = new Figura[10]; // Criar um vetor com 10 figuras
-		for (int i = 0; i < 10; i++) { // percore o vetor figuras2
+		Figura[] figuras2 = new Figura[10]; // cria um vetor com 10 figuras
+		for (int i = 0; i < 10; i++) { // percorre o vetor figuras2
 			Random rand = new Random(); // cria um objeto Random
 
 			// gera uma posição x aleatória para a figura a cada iteração
